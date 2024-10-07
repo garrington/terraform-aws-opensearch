@@ -442,10 +442,3 @@ variable "log_streams_enabled" {
     "AUDIT_LOGS"          = "false"
   }
 }
-
-variable "custom_vpce" {
-  description = "List of VPC endpoints for the CNAME record"
-  type        = list(string)
-  default     = []
-}
-
