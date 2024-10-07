@@ -442,3 +442,9 @@ variable "log_streams_enabled" {
     "AUDIT_LOGS"          = "false"
   }
 }
+
+variable "custom_vpce" {
+  description = "The VPCE for this domain"
+  type        = string
+  default     = null
+}
