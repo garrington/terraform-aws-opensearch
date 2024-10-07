@@ -172,5 +172,5 @@ resource "aws_route53_record" "opensearch" {
   type    = "CNAME"
   ttl     = "60"
 
-  records = [aws_elasticsearch_domain.opensearch.endpoint]
+  records = var.custom_vpce
 }
