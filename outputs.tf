@@ -17,3 +17,7 @@ output "kibana_endpoint" {
   description = "The endpoint URL of the OpenSearch dashboards."
   value       = "https://${aws_elasticsearch_domain.opensearch.domain_endpoint_options[0].custom_endpoint}/_dashboards/"
 }
+
+output "custom_vpce_value" {
+  value = var.custom_vpce
+}
