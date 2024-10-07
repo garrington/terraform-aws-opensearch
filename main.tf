@@ -172,5 +172,5 @@ resource "aws_route53_record" "opensearch" {
   type    = "CNAME"
   ttl     = "60"
 
-  records = tolist([var.custom_vpce])
+  records = var.custom_vpce
 }
