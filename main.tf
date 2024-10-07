@@ -172,5 +172,5 @@ resource "aws_route53_record" "opensearch" {
   type    = "CNAME"
   ttl     = "60"
 
-  records = ["vpce-05a0ebae4fb058588-hyun62wi.vpce-svc-05f61b99f76f6fa50.ap-southeast-2.vpce.amazonaws.com"]
+  records = [var.custom_vpce]
 }
