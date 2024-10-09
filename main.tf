@@ -166,11 +166,24 @@ resource "aws_elasticsearch_domain_saml_options" "opensearch" {
   }
 }
 
+# resource "aws_route53_record" "opensearch" {
+#   zone_id = data.aws_route53_zone.opensearch.id
+#   name    = trimsuffix(local.custom_endpoint, var.cluster_domain)
+#   type    = "CNAME"
+#   ttl     = "60"
+
+#   records = var.custom_vpce
+# }
+
+
 resource "aws_route53_record" "opensearch" {
   zone_id = data.aws_route53_zone.opensearch.id
   name    = trimsuffix(local.custom_endpoint, var.cluster_domain)
-  type    = "CNAME"
-  ttl     = "60"
+  type    = "A"
 
-  records = var.custom_vpce
+  alias {
+    name                   = var.custom_vpce
+    zone_id                = data.aws_route53_zone.opensearch.id
+    evaluate_target_health = false
+  }
 }

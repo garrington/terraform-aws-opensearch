@@ -445,6 +445,6 @@ variable "log_streams_enabled" {
 
 variable "custom_vpce" {
   description = "List of VPC endpoints or DNS targets for the CNAME record"
-  type        = list(string)
-  default     = []
+  type        = string
+  default     = ""
 }
