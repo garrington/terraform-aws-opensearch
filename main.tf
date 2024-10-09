@@ -183,7 +183,7 @@ resource "aws_route53_record" "opensearch" {
 
   alias {
     name                   = var.custom_vpce
-    zone_id                = data.aws_route53_zone.opensearch.id
+    zone_id                = var.domain_vpce_hosted_zone_id
     evaluate_target_health = false
   }
 }

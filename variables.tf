@@ -448,3 +448,9 @@ variable "custom_vpce" {
   type        = string
   default     = ""
 }
+
+variable "domain_vpce_hosted_zone_id" {
+  description = "The AWS hosted zone ID of the VPC endpoint (not our hosted zone)"
+  type        = string
+  default     = ""
+}
