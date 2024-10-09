@@ -17,3 +17,9 @@ output "kibana_endpoint" {
   description = "The endpoint URL of the OpenSearch dashboards."
   value       = "https://${aws_elasticsearch_domain.opensearch.domain_endpoint_options[0].custom_endpoint}/_dashboards/"
 }
+
+
+output "cluster_domain" {
+  description = "Cluster domain."
+  value       = aws_elasticsearch_domain.opensearch.cluster_domain
+}
